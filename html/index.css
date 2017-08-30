@@ -1,0 +1,107 @@
+html,
+body {
+    font-family: '微软雅黑';
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+div {
+    margin: 0;
+    padding: 0;
+}
+
+.bg {
+    width: 100%;
+    display: block;
+}
+
+nav{
+        /* background: #07a7e3; */
+        background: #fff;
+        height: 78px;
+        width: 100%;
+            
+        }
+        .nav{
+            width: 1028px;
+            height: 78px;
+            margin: auto;
+        }
+        .nav-wrap{
+            float: left;
+            margin: 0;
+            /*padding-right: 130px;*/
+        }
+        .nav-list{
+            float: left;
+            width: 86px;
+            /* padding: 0 20px; */
+            list-style: none;
+            line-height: 78px;
+        }
+        .nav-item{
+            color: #000;
+            text-decoration: none;
+        }
+        .nav-item:hover{
+            color: #07a7e3;
+        }
+        .nav-item.active{
+            color: #07a7e3;
+            /* padding-bottom: 10px;
+            border-bottom: 1px solid #07a7e3; */
+        }
+        .nav-item.nav-btn{
+            display: block;
+            color: #fff;
+            background-color: #07a7e3;
+            height: 28px;
+            margin: 25px 0;
+            line-height: 28px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .icon{
+            line-height: 100%;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            display: block;
+            float: left;
+        }
+        .icon-arr{
+            position: absolute;
+            top: 0;
+            left: 10px;
+            width: 0;
+            height: 0;
+            border-width: 10px 12px;
+            border-style: solid;
+            border-color: transparent transparent #fff transparent; 
+        }
+        .nav-sub-item{
+            display: block;
+            color: #07a7e3;
+            text-decoration: none;
+            text-align: center;
+            line-height: 55px;
+            margin: 0 40px 5px 40px;
+            border-top: 1px solid;
+        }
+        .nav-sub-item:first-child{
+            border-top: none;
+        }
+
+        .nav-wx{
+            float: right;
+            height: 38px;
+            padding: 20px 10px;
+        }
+
+        #nav_sub{
+            display:none;position:absolute;width:200px;height:200px;z-index:9999;
+        }
+        #nav_qr{
+            display:none;position:absolute;width:120px;z-index:9999;
+        }
