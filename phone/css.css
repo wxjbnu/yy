@@ -1,0 +1,22 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+img{
+    display: block;
+    width: 100%;
+}
+nav{
+    /* display: flex; */
+    height: 48px;
+    position: relative;
+    background-color: blue;
+}
+.logo{
+    width: 200px;
+    float: left;
+}
+.menu{
+    width: 48px;
+    float: right;
+}
