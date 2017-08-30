@@ -79,12 +79,22 @@
         }
 
         .phone-mask{
+            /* display: none; */
             position: absolute;
-            background: #000;
+            background: transparent;
             width: 13.5%;
             height: 0;
             padding-top: 23%;
             top: 25%;
+        }
+        .phone-mask.hover{
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .phone-mask img{
+            display: none;
+        }
+        .phone-mask.hover img{
+            display: block;
         }
         .phone-mask-1{
             left: 43.2%;
@@ -147,13 +157,13 @@
         </div>
         <div style="position:relative">
             <img class="bg" src="img/index/1-4.jpg">
-            <div class="phone-mask phone-mask-1" style="display:none">
+            <div class="phone-mask phone-mask-1 " >
                 <img style="margin-top: -100%;" class="bg" src="../img/logo.png"/>
             </div>
-            <div class="phone-mask phone-mask-2" style="display:none">
+            <div class="phone-mask phone-mask-2" style="">
                 <img style="margin-top: -100%;" class="bg" src="../img/logo.png"/>
             </div>
-            <div class="phone-mask phone-mask-3" style="display:none">
+            <div class="phone-mask phone-mask-3" style="">
                 <img style="margin-top: -100%;" class="bg" src="../img/logo.png"/>
             </div>
         </div>
@@ -213,6 +223,7 @@
                 $('.slider-dot').eq(index).addClass('active')
                 // console.log(index)
             },3000)
+
             $("#plus").click(function () {
                 if($("#hidepic").height()>0){
                     $("#hidepic").animate({'height':'0'},500)
@@ -223,7 +234,14 @@
 
             $(".phone-mask").mouseenter(function(){
                 var index = $(this).index()
-                $(".phone-mask").eq(index).show()
+                $(this).addClass('hover')
+                // $(".phone-mask").show()
+            })
+
+            $(".phone-mask").mouseleave(function(){
+                var index = $(this).index()
+                $(this).removeClass('hover')
+                // $(".phone-mask").show()
             })
         });
     </script>
