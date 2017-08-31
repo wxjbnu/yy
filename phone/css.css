@@ -10,13 +10,17 @@ nav{
     /* display: flex; */
     height: 48px;
     position: relative;
-    background-color: blue;
+    background-color: #07a7e3;
 }
 .logo{
     width: 200px;
     float: left;
 }
 .menu{
+    position: relative;
     width: 48px;
     float: right;
+}
+.menu-mask{
+    
 }
