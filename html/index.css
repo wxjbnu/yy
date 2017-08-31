@@ -18,9 +18,13 @@ div {
 
 nav{
         /* background: #07a7e3; */
+        position: fixed;
         background: #fff;
         height: 78px;
         width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 999;
             
         }
         .nav{
@@ -104,4 +108,31 @@ nav{
         }
         #nav_qr{
             display:none;position:absolute;width:120px;z-index:9999;
+        }
+
+        .index-more{
+            display:block;
+            position: absolute;
+            
+            background: transparent;
+            border:1px solid #fff;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+
+        .more-bottom{
+            width: 8%;
+            height: 22px;
+            bottom: 33%;
+            left: 23.4%;
+            background: transparent;
+            color: #07a7e3;
+            border: 1px solid #07a7e3;
+        }
+        .more-bottom:hover{
+            background: #07a7e3;
+            color: #fff;
+            border: 1px solid #07a7e3;
         }

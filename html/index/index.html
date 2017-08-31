@@ -10,22 +10,23 @@
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <style>
         .slider{
-            width: 1028px;
-            height: 590px;
+            /* width: 1028px; */
+            width: 100%;
+            /* height: 590px; */
             margin: auto;
             overflow: hidden;
             position: relative;
         }
         .slider-wrap{
-            width: 6168px;
-            height: 590px;
+            /* width: 6168px; */
+            /* height: 590px; */
             margin: 0;
             padding: 0;
             position: relative;
         }
         .slider-wrap li{
-            width: 1028px;
-            height: 590px;
+            /* width: 1028px; */
+            /* height: 590px; */
             float: left;
             list-style: none;
         }
@@ -45,17 +46,7 @@
         .slider-dot.active{
             background:#07a7e3;
         }
-        .index-more{
-            display:block;
-            position: absolute;
-            
-            background: transparent;
-            border:1px solid #fff;
-            color: #fff;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 3px;
-        }
+        
         .more-o{
             width: 10%;
             height: 28px;
@@ -83,8 +74,8 @@
             position: absolute;
             background: transparent;
             width: 13.5%;
-            height: 0;
-            padding-top: 23%;
+            height: 46%;
+            /* padding-top: 23%; */
             top: 25%;
         }
         .phone-mask.hover{
@@ -104,6 +95,24 @@
         }
         .phone-mask-3{
             left: 75.7%;
+        }
+        .slider-arr{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            top: 35%;
+            background-image: url('img/index/arr.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            cursor: pointer;
+            z-index: 9999;
+        }
+        .left-arr{
+            left: 10%;
+            transform: rotate(180deg);
+        }
+        .right-arr{
+            right: 10%;
         }
 
     </style>
@@ -131,15 +140,15 @@
             <img class="bg" src="img/index/1-1.jpg">
             <a class="index-more more-o" href="plan.html">了解详情</a>
         </div>
-        <div style="width:1028px;margin:auto;">
+        <div style="">
             <div class="slider">
                 <ul class="slider-wrap">
-                    <li><img class="bg" src="img/index/1-2.jpg"></li>
-                    <li><img class="bg" src="img/index/1-2.jpg"></li>
-                    <li><img class="bg" src="img/index/1-2.jpg"></li>
-                    <li><img class="bg" src="img/index/1-2.jpg"></li>
-                    <li><img class="bg" src="img/index/1-2.jpg"></li>
-                    <li><img class="bg" src="img/index/1-2.jpg"></li>
+                    <li><img class="bg" src="img/index/1-2-1.jpg"></li>
+                    <li><img class="bg" src="img/index/1-2-2.jpg"></li>
+                    <li><img class="bg" src="img/index/1-2-3.jpg"></li>
+                    <li><img class="bg" src="img/index/1-2-4.jpg"></li>
+                    <li><img class="bg" src="img/index/1-2-1.jpg"></li>
+                    <li><img class="bg" src="img/index/1-2-1.jpg"></li>
                 </ul>
                 <ul style="position:absolute;left:0;right:0;bottom:10px;padding:0;text-align:center;">
                     <li class="slider-dot active"></li>
@@ -148,6 +157,8 @@
                     <li class="slider-dot"></li>
                     <li class="slider-dot"></li>
                 </ul>
+                <a class="left-arr slider-arr" href="javascript:void(0)"></a>
+                <a class="right-arr slider-arr" href="javascript:void(0)"></a>
             </div>
         </div>
         <!-- <div><img class="bg" src="img/index/1-2.jpg"></div> -->
@@ -158,13 +169,13 @@
         <div style="position:relative">
             <img class="bg" src="img/index/1-4.jpg">
             <div class="phone-mask phone-mask-1 " >
-                <img style="margin-top: -100%;" class="bg" src="../img/logo.png"/>
+                <img class="bg" src="../img/wx.jpg"/>
             </div>
             <div class="phone-mask phone-mask-2" style="">
-                <img style="margin-top: -100%;" class="bg" src="../img/logo.png"/>
+                <img class="bg" src="../img/wx.jpg"/>
             </div>
             <div class="phone-mask phone-mask-3" style="">
-                <img style="margin-top: -100%;" class="bg" src="../img/logo.png"/>
+                <img class="bg" src="../img/gh.jpg"/>
             </div>
         </div>
         <div><img class="bg" src="img/index/1-5.jpg"></div>
@@ -173,8 +184,8 @@
             <!-- <a style="display: block;position: absolute;width: 10%;height: 22px;bottom: 31%;left: 1%;background: transparent;right: 0;margin: auto;" href="plan.html"></a> -->
         </div>
         <div style="position:relative">
-            <img class="bg" src="img/index/1-7.jpg">
-            <!-- <a style="display: block;position: absolute;width: 10%;height: 22px;bottom: 39%;left: 1%;background: transparent;right: 0;margin: auto;" href="pregnant.html"></a> -->
+            <img class="bg" src="../img/bottom.jpg">
+            <a class="index-more more-bottom" style="" href="pregnant.html">了解更多</a>
         </div>
         <!-- <div style="position:relative">
             <img class="bg" src="img/index/1-8.jpg">
@@ -205,24 +216,64 @@
         }
 
         $(function(){
-            var one = "1028";
+            var one = document.body.offsetWidth;
             var index = 0;
-            setInterval(function(){
-                if(index<5){
-                    index++
+            var startSlider = false
+            var sliderApp = null;
+            $('.slider-wrap').css({width:one*6+'px'})
+            $('.slider-wrap li').css({width:one+'px'})
+
+            function setSlider() {
+                var tt = setInterval(function(){
+                    if(index<5){
+                        index++
+                        $('.slider-wrap').animate({left: -one*index+"px"},500)
+                    }else{
+                        index = 0
+                        $('.slider-wrap').css("left","0")
+                    }
+                    if(index==5){
+                        index = 0
+                    }
+                    $('.slider-dot').removeClass('active')
+                    $('.slider-dot').eq(index).addClass('active')
+                },3000)
+                // startSlider = true
+                return tt
+            }
+
+            function clearSlider(sliderApp) {
+                clearInterval(sliderApp)
+            }
+
+            sliderApp = setSlider() //设置轮播
+
+            $(".left-arr").click(function () {
+                clearSlider(sliderApp)
+                if(index == 0){
+                    index = 5
                     $('.slider-wrap').animate({left: -one*index+"px"},500)
                 }else{
-                    index = 0
-                    $('.slider-wrap').css("left","0")
-                }
-
-                if(index==5){
-                    index = 0
+                    index--
+                    $('.slider-wrap').animate({left: -one*index+"px"},500)
                 }
                 $('.slider-dot').removeClass('active')
                 $('.slider-dot').eq(index).addClass('active')
-                // console.log(index)
-            },3000)
+                sliderApp = setSlider()
+            })
+            $(".right-arr").click(function () {
+                clearSlider(sliderApp)
+                if(index == 5){
+                    index = 0
+                    $('.slider-wrap').animate({left: -one*index+"px"},500)
+                }else{
+                    index++
+                    $('.slider-wrap').animate({left: -one*index+"px"},500)
+                }
+                $('.slider-dot').removeClass('active')
+                $('.slider-dot').eq(index).addClass('active')
+                sliderApp = setSlider()
+            })
 
             $("#plus").click(function () {
                 if($("#hidepic").height()>0){
