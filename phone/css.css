@@ -15,11 +15,7 @@ nav{
     /* display: flex; */
     width: 100%;
     height: 48px;
-<<<<<<< HEAD
     position: fixed;
-=======
-    position: relative;
->>>>>>> 0109546ced3e8d325f5ac8f7754d744d33b44083
     background-color: #07a7e3;
 }
 .logo{
@@ -29,12 +25,8 @@ nav{
     padding-left: 20px;
 }
 .menu{
-<<<<<<< HEAD
     width: 28px;
-=======
     position: relative;
-    width: 48px;
->>>>>>> 0109546ced3e8d325f5ac8f7754d744d33b44083
     float: right;
     padding-top: 12px;
     padding-right: 20px;
@@ -61,7 +53,7 @@ nav{
     box-sizing: border-box;
     border-bottom: 1px solid #999;
 }
-<<<<<<< HEAD
+
 .menu-item a{
     display: block;
     text-decoration: none;
@@ -78,8 +70,7 @@ nav{
 .bottom img{
     width: 100%;
 }
-=======
+
 .menu-mask{
     
 }
->>>>>>> 0109546ced3e8d325f5ac8f7754d744d33b44083
