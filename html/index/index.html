@@ -7,7 +7,9 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="../swipe.css">
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../swipe.js"></script>
     <style>
         .slider{
             /* width: 1028px; */
@@ -141,7 +143,20 @@
             <a class="index-more more-o" href="plan.html">了解详情</a>
         </div>
         <div style="">
-            <div class="slider">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img class="bg" src="img/index/1-2-1.jpg"></div>
+                    <div class="swiper-slide"><img class="bg" src="img/index/1-2-2.jpg"></div>
+                    <div class="swiper-slide"><img class="bg" src="img/index/1-2-3.jpg"></div>
+                    <div class="swiper-slide"><img class="bg" src="img/index/1-2-4.jpg"></div>
+                </div>
+            </div>
+            <script> 
+                var mySwiper = new Swiper('.swiper-container', {
+                    autoplay: 3000,//可选选项，自动滑动
+                })
+            </script>
+            <!-- <div class="slider">
                 <ul class="slider-wrap">
                     <li><img class="bg" src="img/index/1-2-1.jpg"></li>
                     <li><img class="bg" src="img/index/1-2-2.jpg"></li>
@@ -159,7 +174,7 @@
                 </ul>
                 <a class="left-arr slider-arr" href="javascript:void(0)"></a>
                 <a class="right-arr slider-arr" href="javascript:void(0)"></a>
-            </div>
+            </div> -->
         </div>
         <!-- <div><img class="bg" src="img/index/1-2.jpg"></div> -->
         <div style="position:relative">
