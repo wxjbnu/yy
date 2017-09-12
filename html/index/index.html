@@ -116,6 +116,10 @@
         .right-arr{
             right: 10%;
         }
+        .swiper-pagination-bullet{
+            width: 12px!important;
+            height: 12px!important;
+        }
 
     </style>
 </head>
@@ -150,10 +154,14 @@
                     <div class="swiper-slide"><img class="bg" src="img/index/1-2-3.jpg"></div>
                     <div class="swiper-slide"><img class="bg" src="img/index/1-2-4.jpg"></div>
                 </div>
+                <div class="swiper-pagination"></div>
             </div>
             <script> 
                 var mySwiper = new Swiper('.swiper-container', {
-                    autoplay: 3000,//可选选项，自动滑动
+                    autoplay: 4000,//可选选项，自动滑动
+                    pagination : '.swiper-pagination',
+                    paginationClickable :true,
+                    loop : true,
                 })
             </script>
             <!-- <div class="slider">
